@@ -37,7 +37,7 @@ window.config={
     },
     //物业支付跳转
     wuye_payment:{
-        payment:url+namepay+'/guizhouwuyepay.html?#/?'//物业支付成功跳转
+        payment:url+namepay+'/guizhouwuyepay.html?#/?',//物业支付成功跳转
     },
     
 

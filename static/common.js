@@ -1,7 +1,7 @@
 //开发环境
 var MasterConfig = function() {
     var t = {
-        baseUrl: "https://www.e-shequ.com/guizhou/wechat/hexie/wechat/",
+        baseUrl: "https://www.e-shequ.com/guizhou/wechat/hexie/wechat",
         basePageUrl:"https://www.e-shequ.com/guizhou/weixin/",
         payPageFolder:"https://www.e-shequ.com/pay/",
         payPageSuffix:"guizhou",
