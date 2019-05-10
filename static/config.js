@@ -4,12 +4,14 @@ var url=/127|test/.test(location.origin)?'https://test.e-shequ.com':
 var name='/guizhou';
 var namepay='/pay';
 window.config={
+     
     //公共的请求地址
          URL:url+name+'/wechat/hexie/wechat/',
     //公共的底部跳转
     footer:{
         wuye:url+name+'/weixin/wuye/index.html?v=20162299',
         person:url+name+'/weixin/person/index.html?v=20160229',
+        home:url+name+'/weixin/home/index.html?v=20160229',
     },
     //现金券
     person_coupons:{
@@ -37,9 +39,18 @@ window.config={
     },
     //物业支付跳转
     wuye_payment:{
-        payment:url+namepay+'/guizhouwuyepay.html?#/?',//物业支付成功跳转
+        payment:url+namepay+'/guizhouwuyepay.html?#/?'//物业支付成功跳转
     },
+
+    //保洁
+    home_baojie:{
+        url1:url+namepay+'/guizhoubaojiepay.html?state=123#/order',//支付订单
+        url2:url+namepay+'/guizhoubaojiepay.html?state=123#/'//立即预约
+    }
     
+
+    
+
 
 
    
