@@ -1,6 +1,6 @@
 var url=/127|test/.test(location.origin)?'https://test.e-shequ.com':
-    /uat/.test(location.origin)?'https://uat.e-shequ.com':
-    'https://www.e-shequ.com';
+    /uat/.test(location.origin)?'https://uat.e-shequ.cn':
+    'https://www.e-shequ.cn';
 var name='/guizhou';
 var namepay='/pay';
 window.config={
@@ -33,9 +33,9 @@ window.config={
     },
      //物业绑定房子
      house_domain: {
-        domain:/127|test/.test(location.origin)?'test.e-shequ.com':
-        /uat/.test(location.origin)?'at.e-shequ.com':
-        'www.e-shequ.com'
+        domain:/127|test/.test(location.origin)?'test.e-shequ.cn':
+        /uat/.test(location.origin)?'at.e-shequ.cn':
+        'www.e-shequ.cn'
     },
     //物业支付跳转
     wuye_payment:{
