@@ -12,6 +12,7 @@ window.config={
         wuye:url+name+'/weixin/wuye/index.html?v=20162299',
         person:url+name+'/weixin/person/index.html?v=20160229',
         home:url+name+'/weixin/home/index.html?v=20160229',
+        group:url+name+'/weixin/group/onsales.html?v=20162299'
     },
     //现金券
     person_coupons:{
