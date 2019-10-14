@@ -2,7 +2,7 @@ var MasterConfig = function() {
     var t = {
                 
        baseUrl: "https://test.e-shequ.com/guizhou/wechat/hexie/wechat/",
-        basePageUrl:"https://test.e-shequ.com/weixin/",
+        basePageUrl:"https://test.e-shequ.com/guizhou/weixin/",
         appId: "wx95f46f41ca5e570e",
         
         //baseUrl: "https://test.e-shequ.com/wechat-sit/hexie/wechat/",
@@ -16,7 +16,7 @@ var MasterConfig = function() {
         oauthUrlPostFix:"&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect",
         bindAppId: "wxa48ca61b68163483",
         
-		//payPageFolder:"https://test.e-shequ.com/pay/",
+		payPageFolder:"https://test.e-shequ.com/pay/",
         payPageSuffix:"hx",		//hexie
 
         baidu_map_key:"RUWUgrEEF5VjoaWsstMMZwOD",
