@@ -2,7 +2,7 @@ var MasterConfig = function() {
     var t = {
                 
        baseUrl: "https://test.e-shequ.com/guizhou/wechat/hexie/wechat/",
-        basePageUrl:"https://test.e-shequ.com/weixin/",
+        basePageUrl:"https://test.e-shequ.com/guizhou/weixin/",
         appId: "wx95f46f41ca5e570e",
         
         //baseUrl: "https://test.e-shequ.com/wechat-sit/hexie/wechat/",
