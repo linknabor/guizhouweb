@@ -17,7 +17,7 @@ var MasterConfig = function() {
         bindAppId: "wxa48ca61b68163483",
         
 		//payPageFolder:"https://test.e-shequ.com/pay/",
-        payPageSuffix:"hx",		//hexie
+        payPageSuffix:"gz",		//hexie
 
         baidu_map_key:"RUWUgrEEF5VjoaWsstMMZwOD",
         shop_name: "合协",
