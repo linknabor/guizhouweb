@@ -2,7 +2,7 @@ var url=/127|test/.test(location.origin)?'https://test.e-shequ.com':
     /uat/.test(location.origin)?'https://uat.e-shequ.cn':
     'https://www.e-shequ.cn';
 var name='/guizhou';
-var namepay='/pay';
+var namepay='/weixin/pay';
 window.config={
      
     //公共的请求地址
@@ -46,8 +46,8 @@ window.config={
 
     //保洁
     home_baojie:{
-        url1:url+namepay+'weixin/guizhoubaojiepay.html?state=123#/order',//支付订单
-        url2:url+namepay+'weixin/guizhoubaojiepay.html?state=123#/'//立即预约
+        url1:url+namepay+'/guizhoubaojiepay.html?state=123#/order',//支付订单
+        url2:url+namepay+'/guizhoubaojiepay.html?state=123#/'//立即预约
     }
     
 
