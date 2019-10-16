@@ -30,8 +30,6 @@ window.config={
     //报修
     person_repair:{
 
-
-       url:url+name+'/weixin/wuye/index.html?state=123#/repair?projectId=1',//报修
         fuwux:url+name+'/weixin/wuye/index.html?state=123#/butler?category=0',//服务需求 
         butler:url+name+'/weixin/wuye/index.html?state=123#/mysteward',//建议
     },
