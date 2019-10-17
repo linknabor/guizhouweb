@@ -20,7 +20,7 @@ var MasterConfig = function() {
         payPageSuffix:"gz",		//hexie
 
         baidu_map_key:"RUWUgrEEF5VjoaWsstMMZwOD",
-        shop_name: "合协",
+        shop_name: "贵州",
         
         is_debug:true,
         statistics: {
@@ -454,4 +454,4 @@ var commonui = {
 
 checkBindAndBind();
 checkCodeAndLogin();
-common.setTitle(MasterConfig.C("shop_name") + "社区");
+common.setTitle(MasterConfig.C("shop_name") + "幸福家园");
