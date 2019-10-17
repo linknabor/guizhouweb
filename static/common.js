@@ -15,9 +15,9 @@ var MasterConfig = function() {
         is_debug:true
          
         
-        // baseUrl: "https://www.e-shequ.cn/baofang/wechat/hexie/wechat/",
-        // basePageUrl:"https://www.e-shequ.cn/baofang/weixin/",
-        // payPageFolder:"https://www.e-shequ.cn/pay/",
+        // baseUrl: "https://test.e-shequ.cn/baofang/wechat/hexie/wechat/",
+        // basePageUrl:"https://test.e-shequ.cn/baofang/weixin/",
+        // payPageFolder:"https://test.e-shequ.cn/pay/",
         // payPageSuffix:"baofang",
         // appId: "wx95f46f41ca5e570e",
         // oauthUrl: "https://open.weixin.qq.com/connect/oauth2/authorize?",
