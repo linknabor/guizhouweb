@@ -1,8 +1,8 @@
 var MasterConfig = function() {
     var t = {
                 
-        baseUrl: "http://www.e-shequ.com/wechat/hexie/wechat/",
-        basePageUrl:"http://www.e-shequ.com/weixin/",
+        baseUrl: "http://test.e-shequ.com/wechat/hexie/wechat/",
+        basePageUrl:"http://test.e-shequ.com/weixin/",
         // appId: "wx89c743b2fa762a2c",
         
         //baseUrl: "http://www.e-shequ.com/wechat-sit/hexie/wechat/",
@@ -16,7 +16,7 @@ var MasterConfig = function() {
         oauthUrlPostFix:"&response_type=code&scope=snsapi_base&state=123#wechat_redirect",
         // bindAppId: "wxa48ca61b68163483",
         
-		payPageFolder:"http://www.e-shequ.com/pay/",
+		payPageFolder:"http://test.e-shequ.com/pay/",
         payPageSuffix:"hx",		//hexie
 
         baidu_map_key:"RUWUgrEEF5VjoaWsstMMZwOD",
