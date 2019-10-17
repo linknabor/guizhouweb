@@ -11,23 +11,24 @@ avalon.ready(function() {
 	}
 	
 	function initShareSetting(order){
-		var title = "代扔垃圾服务报名，限时优惠中！";
-		var link=MasterConfig.C('basePageUrl')+"group/rgroupdetail.html?ruleId="+order.groupRuleId;
-		if(order.orderType==4){
-			link=MasterConfig.C('basePageUrl')+"group/rgroupdetail.html?ruleId="+order.groupRuleId;
-		}else if(order.orderType==0&&order.groupId!=0){
-			link=MasterConfig.C('basePageUrl')+"group.html?groupId="+order.groupId;
-		}
+		// var title = "代扔垃圾服务报名，限时优惠中！";
+		// var link=MasterConfig.C('basePageUrl')+"group/rgroupdetail.html?ruleId="+order.groupRuleId;
+		// if(order.orderType==4){
+		// 	link=MasterConfig.C('basePageUrl')+"group/rgroupdetail.html?ruleId="+order.groupRuleId;
+		// }else if(order.orderType==0&&order.groupId!=0){
+		// 	link=MasterConfig.C('basePageUrl')+"group.html?groupId="+order.groupId;
+		// }
 
-		var desc="快来参加贵州幸福生活的优惠商品抢购吧";
-		var img=order.productPic;
-		if(order.seedStr!=null&&order.seedStr!=''){
-			title = "合协社区专享现金券";
-			desc="分享给小伙伴们一个超赞的购物现金券！";
-			img=MasterConfig.C('basePageUrl')+"static/images/coupon_share_icon.jpg"
-			link=MasterConfig.C('basePageUrl')+"coupon.html?o="+order.seedStr;
-		}
-		initShareConfig(title,link,img,desc);
+		// var desc="快来参加贵州幸福生活的优惠商品抢购吧";
+		// var img=order.productPic;
+		// if(order.seedStr!=null&&order.seedStr!=''){
+		// 	title = "合协社区专享现金券";
+		// 	desc="分享给小伙伴们一个超赞的购物现金券！";
+		// 	img=MasterConfig.C('basePageUrl')+"static/images/coupon_share_icon.jpg"
+		// 	link=MasterConfig.C('basePageUrl')+"coupon.html?o="+order.seedStr;
+		// }
+		// initShareConfig(title,link,img,desc);
+
 	}
     function query() {
         var n = "GET",
@@ -36,21 +37,29 @@ avalon.ready(function() {
         e = function(n) {
 			console.log(JSON.stringify(n));
             o.order = n.result;
-            if(o.order == null || o.order.id == null){
-            	if(confirm("获取订单信息失败")){
-		        	if(o.type==4){
-		        		location.href="rgroups.html";        		
-		        	}else if(o.type==3){
-		        		location.href="onsalesindex.html";
-		        	}else if(o.type==5){
-		        		location.href="../home/index.html?v=20160229";
-		        	}else{
-		        		location.href="onsalesindex.html";     		
-		        	}
-    			}
-            } else {
-				initShareSetting(o.order);
-			}
+            // if(o.order == null || o.order.id == null){
+            // 	if(confirm("获取订单信息失败")){
+		    //     	if(o.type==4){
+		    //     		location.href="rgroups.html";        		
+		    //     	}else if(o.type==3){
+		    //     		location.href="onsalesindex.html";
+		    //     	}else if(o.type==5){
+		    //     		location.href="../home/index.html?v=20160229";
+		    //     	}else{
+		    //     		location.href="onsalesindex.html";     		
+		    //     	}
+    		// 	}
+			// }
+			setTimeout(initSwipe,1000);
+			initShareConfig(o.order.name,MasterConfig.C("basePageUrl")+"group/onsaledetail.html?orderId="+o.order,o.order.productThumbPic,"快来参加贵州幸福生活的优惠商品抢购吧");
+			//  else {
+			// 	initShareSetting(o.order);
+			// }
+			r = function(n) {
+				console.log("error");
+				alert(n.message==null ?"获取产品信息失败！":n.message);
+			};
+			common.invokeApi(n, a, i, null, e, r)
         },
         r = function() {
         	if(confirm("获取订单信息失败")){
@@ -66,7 +75,9 @@ avalon.ready(function() {
 			};
         };
         common.invokeApi(n, a, i, null, e, r)
-    }
+	}function getMessageId(){
+		o.ruleId=getUrlParam("order");
+	}
     var o = avalon.define({
         $id: "root",
         order:{seedStr:""},
@@ -86,7 +97,8 @@ avalon.ready(function() {
     });
     getOrderId();
     notifyPaySuccess();
-    query();
+	query();
+	getMessageId();
 	initWechat(['onMenuShareTimeline','onMenuShareAppMessage']);
     avalon.scan(document.body);
 });
