@@ -217,6 +217,7 @@ window.common = {
     },
      //授权
     login: function() {
+        var timestamp="";
         var o = this._GET().code;
         if (common.alert("code: " + o), void 0 === o) {
             var n = location.origin + common.removeParamFromUrl(["from","bind", "code", "share_id", "isappinstalled", "state", "m", "c", "a"])+common.addParamHsah(),
