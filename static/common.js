@@ -1,11 +1,18 @@
 //开发环境
 var MasterConfig = function() {
     var t = {
-        baseUrl: "https://test.e-shequ.com/guizhou/wechat/hexie/wechat/",
-        basePageUrl:"https://test.e-shequ.com/guizhou/weixin/",
-        payPageFolder:"https://test.e-shequ.com/weixin/pay/",
-        payPageSuffix:"guizhou",
-        appId: "wx95f46f41ca5e570e",
+        baseUrl: /127|test/.test(location.origin)?'https://test.e-shequ.com/guizhou/wechat/hexie/wechat/':
+        'https://www.e-shequ.cn/guizhou/wechat/hexie/wechat/',
+        
+        basePageUrl:/127|test/.test(location.origin)?'https://test.e-shequ.com/guizhou/weixin/':
+        'https://www.e-shequ.cn/guizhou/weixin/',
+
+        payPageFolder:/127|test/.test(location.origin)?'https://test.e-shequ.com/pay/':
+        'https://www.e-shequ.cn/pay/',
+
+        appId: /127|test/.test(location.origin)?'wx95f46f41ca5e570e':
+        'wx753f3c2293294605',
+
         oauthUrl: "https://open.weixin.qq.com/connect/oauth2/authorize?",
         oauthUrlPostFix:"&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect",
 		oauthUrlPostSilent:"&response_type=code&scope=snsapi_base&state=123#wechat_redirect",
@@ -13,20 +20,6 @@ var MasterConfig = function() {
         baidu_map_key:"RUWUgrEEF5VjoaWsstMMZwOD",
         shop_name: "贵州幸福家园",
         is_debug:true
-         
-        
-        // baseUrl: "https://test.e-shequ.cn/baofang/wechat/hexie/wechat/",
-        // basePageUrl:"https://test.e-shequ.cn/baofang/weixin/",
-        // payPageFolder:"https://test.e-shequ.cn/pay/",
-        // payPageSuffix:"baofang",
-        // appId: "wx95f46f41ca5e570e",
-        // oauthUrl: "https://open.weixin.qq.com/connect/oauth2/authorize?",
-        // oauthUrlPostFix:"&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect",
-		// oauthUrlPostSilent:"&response_type=code&scope=snsapi_base&state=123#wechat_redirect",
-        // bindAppId: "wx95f46f41ca5e570e",
-        // baidu_map_key:"RUWUgrEEF5VjoaWsstMMZwOD",
-        // shop_name: "贵州幸福家园",
-        // is_debug:true
     },
 
     e = {};
@@ -47,7 +40,7 @@ var Config1 = function() {
             no_goods: "更多新品正在陆续推出..."
         },
         user_info: {
-            avatar: "https://test.e-shequ.com/guizhou/weixin/static/images/logo.jpg",
+            avatar: "https://www.e-shequ.cn/guizhou/weixin/static/images/logo.jpg",
             nickname: "游客",
             levelname: "普通会员"
         },
@@ -57,7 +50,7 @@ var Config1 = function() {
             2 : "大楼VIP"
         },
         coupon:{
-            seedImg:"https://test.e-shequ.com/guizhou/weixin/static/img/banner/banner_market_shuiguo.jpg"
+            seedImg:"https://www.e-shequ.cn/guizhou/weixin/static/img/banner/banner_market_shuiguo.jpg"
         }
     },
     e = {};
@@ -237,8 +230,23 @@ window.common = {
         },
         function(x) {
             common.updateUserStatus(x.result);
-            AJAXFlag = !0,
-            location.href = location.origin +common.removeParamFromUrl(["code"])+common.addParamHsah();
+            AJAXFlag = !0;
+            if(document.URL.indexOf('.html?t=') < 0) {
+                timestamp= (new Date()).valueOf();
+            }
+            var url= location.origin +common.removeParamFromUrl(["code"]);
+            if(url.indexOf('?')<0){
+                url+='?';
+            }else {
+                url+='&';
+            }
+            if(timestamp!=""){
+                url+='t='+timestamp;
+            }else{
+                url=url.substring(0,url.length-1);
+            }
+            url+=common.addParamHsah();
+            location.href =url;
         })
     },
     /**变更才需要重设置*/
